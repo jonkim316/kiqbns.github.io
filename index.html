@@ -1,553 +1,400 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ko-KR" class="theme light EHoceA"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="/">--><base href="."><title>KIQBNS WEB</title><meta name="app-name" content="export_website"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="./sources/a0684b0780c739e9.vendor.ltr.css" rel="stylesheet" integrity="sha512-JwMCpiHdk95MoUTatfaZJwstzeDnWfvWMJiwnSxZfPmgeCe4yvQDQ+ONMQjIy/Ht72r0TmlE+gvZnYRnpdLdVg==" crossorigin="anonymous"><link href="./sources/41486a3f3556b006.ltr.css" rel="stylesheet" integrity="sha512-4Kv3Zsha8ynK/1q8KtFeSG9EVbb1IvcqHyM5L6F6XWPSfxqk4fJ3+EihE11U0cxXbjgEIETcgDbzAtCTJFDsEA==" crossorigin="anonymous"><link href="./sources/static_font_4.ltr.css" rel="stylesheet"><link href="./sources/44f34d65fd73e1ed.runtime.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-X9pbe1KLWNp2Cc2E+rXPrIyh9ypYg03DtN6V9lyoOIjeLc3KwHU1Qbk1spedVyyKQWRAVXQlYuuiJb/jTIb8GA==" nonce=""><link href="./sources/3728e0a9c5b9c68f.s4le6a.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-Q0M8bNXf4EK25TsxODbPA7DtMzU/wFrdoWP7bVnfp9c03h9VLvkwZpcIKwzo1va1YjfjMMUvJ97M5y6Wlr6Rmw==" nonce=""><link href="./sources/f90d92d25d1cd0e3.vendor.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-M6jk9jbryq7jIVzbpU8D6Xcjfy+cbuTjsd7w+y2vNHWyKDfRLv47TAc015AIC6WzKoZYT8d/jcFyAshhEE7RAg==" nonce=""><link href="./sources/5ca1bccb21c99aad.strings.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-NSvOuvyVmauU0baWwrI+KkWn1SghlbIszMd77wpODUnMtJ33gXAShrC/hF8qsmXLhYZGJH3xWpPWEYMtQKAorw==" nonce=""><link href="./sources/d37787e6e62d4cfd.ko-KR.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-A1XvpbPuLw0A7h/eNGkS450OgRXAbnDuLFKbUVBzRUxnsKIh7RPLTLVzT4RYZ0qCH9m9iYyqson43LZM8Amvfg==" nonce=""><link href="./sources/9bbbab0b3b011006.js" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-5Qmb0qHhAj/ELT1Zr/iswLWaBDeKY6sYbS2JKmpeSwnacFYS6usM1Xx9oWMNY9fQG1YGjOk7o8LX6f9hno3jwA==" nonce=""><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:title" content="KIQBNS WEB"><script nonce="">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script><script nonce="">
-  const lang = navigator.language ? navigator.language : 'en';
-  window.canva_installFooter = (container) => {
-    if (!(container instanceof HTMLDivElement)) {
-      return;
-    }
-    fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.text().then(footerStr => {
-        container.innerHTML = '';
-        const div = document.createElement('div');
-        div.innerHTML = footerStr;
-        for (const child of [...div.children]) {
-          if (child.tagName.toLowerCase() !== 'script') {
-            container.append(child);
-          }
-        }
+<html lang="en">
 
-        (() => { !function(e){"use strict";const t=document.getElementById("modal_backdrop"),o=document.getElementById("modal"),n=document.getElementById("report_button"),c=document.getElementById("form_report"),s=document.getElementById("form_cancel"),d=document.getElementById("form_submit_reason"),l=document.getElementById("form_close"),r=document.getElementById("form_close_initial"),m=document.getElementById("report_reason_0");var i;!function(e){e[e.TERMS=0]="TERMS",e[e.REPORT=1]="REPORT",e[e.SUCCESS=2]="SUCCESS",e[e.REPORT_OTHER=3]="REPORT_OTHER",e[e.REPORT_IP=4]="REPORT_IP"}(i||(i={}));const a=new Map;a.set(i.TERMS,document.getElementById("form_step_terms")),a.set(i.REPORT,document.getElementById("form_step_report_reason")),a.set(i.REPORT_OTHER,document.getElementById("form_step_report_other"));const u=document.getElementById("form_step_report_ip");u&&a.set(i.REPORT_IP,u),a.set(i.SUCCESS,document.getElementById("form_step_success"));const E=document.getElementById("report_reason_4"),_=document.getElementById("form_close_ip"),p=document.getElementById("form_go_back_ip"),R=document.getElementById("report_reason_other"),f=document.getElementById("form_close_other"),y=document.getElementById("form_go_back_other");function g(){t.classList.remove("active"),o.classList.remove("active"),n.classList.remove("active"),n.focus()}function T(e){a.forEach(((t,o)=>{o===e?(t.style.display="block",h(t)):t.style.display="none"}))}function k(){const e={reason:function(){let e="";const t=document.getElementsByName("report_reason");for(let o=0;o<t.length;o++){const n=t[o];n.checked&&(e=n.value)}return e}()},t=window.location.origin+window.location.pathname+"/_api/report";d.classList.add("loading"),fetch(t,{method:"POST",body:JSON.stringify(e),headers:{"Content-Type":"application/json; charset=utf-8"}}).then((e=>{d.classList.remove("loading"),e.ok&&T(i.SUCCESS)}))}t.onclick=g,s.onclick=g,l.onclick=g,r.onclick=g,_&&(_.onclick=g),f.onclick=g,n.onclick=function(){a.forEach(((e,t)=>{e.style.display=t===i.TERMS?"block":"none"})),t.classList.add("active"),o.classList.add("active"),n.classList.add("active"),m.checked=!0,setTimeout((()=>{h(a.get(i.TERMS))}),350)},c.onclick=c.dataset.reportUrl?function(){const{origin:e,pathname:t}=window.location,o=e+t,n=c.dataset.reportUrl+encodeURIComponent(o);window.open(n)}:()=>T(i.REPORT),d.onclick=()=>{null!=u&&E.checked?T(i.REPORT_IP):R.checked?T(i.REPORT_OTHER):k()},p&&(p.onclick=()=>T(i.REPORT)),y.onclick=()=>T(i.REPORT);const I=new Map,h=e=>{const t=I.get(e);null!=t&&document.removeEventListener("keydown",t);const o=e.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),n=e,c=o[o.length-1],s=function(e){("Tab"===e.key||9===e.keyCode)&&(e.shiftKey?document.activeElement===n&&(c.focus(),e.preventDefault()):document.activeElement===c&&(n.focus(),e.preventDefault()))};I.set(e,s),document.addEventListener("keydown",s),n.focus()};e.keepFocus=h}({}); })();
-      });
-    });
-  }
-</script><script nonce="">
-    window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
-</script><script nonce="">
-    window.C_CAPTCHA_KEY = '6LdpNmIrAAAAAHQVezN3pBAfDjQQ2qUpo881f24o';
-</script><style type="text/css"></style><link rel="stylesheet" type="text/css" href="./sources/b5de2817a09dae0e.ltr.css"><style type="text/css"></style><link rel="stylesheet" type="text/css" href="./sources/8f3d189bde7912b2.ltr.css"></head><body><script nonce="">document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script><div id="root"><div class="yIDCqA"><main class="_8OlyIw"><div class="_4KoDHA"><div data-testid="gh22g1" class="l3vAqg"><nav class="jDe9Eg" style="background-color: rgb(255, 255, 255); top: 0px;"><ul class="DBPC9g"><li class="KJpqkQ kWEHHA _7QzcfA" style="color: rgb(48, 66, 84);"><a class="Ej7lEg pTsp_A _3bC2IQ" href="https://kiqbns.re.kr" draggable="false" role="menuitem"><span style="font-family: YACgETiWKS8_0, -apple-system, BlinkMacSystemFont, sans-serif;">Home</span></a></li></ul></nav><div class="_65lpxA"><div class="ZRRuDw"><div style="height: 100%; width: 100%;"><div class="KYQZFA"><section id="PByNl2Hp56bXbYxt" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 251, 245);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="fbzKiw" style="background: rgb(255, 251, 245);"></div><div class="PcHy7w"><div class="uk_25A Ty61NA"><div class="Izwocg" style="width: 1438px; height: 821.714px; transform: translate(-1.13687e-13px, -26.8571px) rotate(0deg);"><img class="_7_i_XA" crossorigin="anonymous" draggable="false" src="./sources/main1.jpg"></div></div></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 508.273px; height: 143.97px; transform: translate(496.48px, 592.408px);"><div style="width: 508.273px; height: 143.97px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 508.273px; height: 121.244px; transform: translate(2.84217e-14px, 1.42109e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(1.36127, 1.36127); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 251, 245); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 390.524px; height: 35.9308px; transform: translate(47.9843px, 93.7498px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 321.716px; height: 29.6px; transform: scale(1.21388, 1.21388); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Korea Institute of</span></p><p class="cgHgbA PPKxyg Xp24Nw" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Quantum Brain and Neural Science</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 417.082px; height: 17.0115px; transform: translate(34.7054px, 126.958px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(1.25085, 1.25085); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 417.082px; height: 17.0115px; transform: translate(37.428px, 126.958px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(1.25085, 1.25085); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PBfs3mS0TZj77FC5" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="Ms_IOA"><svg class="_KMJVg" role="presentation" viewBox="0 0 1438 768" preserveAspectRatio="xMidYMid slice"><defs><lineargradient id="__id0__id1" gradientUnits="userSpaceOnUse" x1="0" y1="384" x2="1438" y2="384"><stop stop-color="#8c52ff" stop-opacity="1" offset="0"></stop><stop stop-color="#ff914d" stop-opacity="1" offset="1"></stop></lineargradient></defs><rect x="0" y="0" width="1438" height="768" fill="url(#__id0__id1)"></rect></svg></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 536.2px; height: 306.4px; transform: translate(153.304px, 322.202px); opacity: 0.73;"><div class="Zp7NQw"><div class="a26Xuw"><div class="PcHy7w"><div class="uk_25A Ty61NA" style="transform: scale(-1, 1);"><div class="Izwocg" style="width: 1060.76px; height: 606.149px; transform: translate(-238.25px, -116.717px) rotate(0deg);"><img class="_7_i_XA" crossorigin="anonymous" draggable="false" src="./sources/afd9e59eea3b823684a9f71330f4af67.png"></div></div></div></div><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 306.4px; width: 536.2px; pointer-events: none; transform: scale(1);"></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1017.2px; height: 147.83px; transform: translate(131.494px, 97.7253px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 1017.2px; height: 147.83px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="AModoQ"><div style="text-shadow: rgba(0, 0, 0, 0.325) 0px 2.18844px 9.30089px; filter: opacity(1);"><div style="transform: translate(0px, -4.08509px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 58.3585px; color: rgb(255, 255, 255); line-height: 78px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Korea Institute of</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p><p class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 58.3585px; color: rgb(255, 255, 255); line-height: 78px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Quantum Brain and Neural Science</span></p></div></div></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 519.067px; height: 306.4px; transform: translate(784.768px, 322.202px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 519.067px; height: 306.4px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, -2.79998px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 27.9998px; color: rgb(36, 48, 160); line-height: 39px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(36, 48, 160); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Can cerebrospinal fluid circulation<br>and meningeal lymphatic drainage<br>be activated while awake?</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(36, 48, 160); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p><div class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 27.9998px; color: rgb(36, 48, 160); line-height: 39px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><p class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 27.9998px; color: rgb(36, 48, 160); line-height: 39px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(36, 48, 160); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">This is the focus of our lab,<br>neurodegeneration,<br>neuroinflammation, immunology ,<br>neurometabolic disorders</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 58.0793px; transform: translate(1148.69px, 675.047px);"><div style="width: 225.154px; height: 58.0793px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 53.7085px; transform: translate(-7.10543e-14px, -2.84217e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(0.603014, 0.603014); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 255, 255); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(15.3737px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(16.5798px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PBjgdqJgrSZv1fHx" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="Ms_IOA"><svg class="_KMJVg" role="presentation" viewBox="0 0 1438 768" preserveAspectRatio="xMidYMid slice"><defs><lineargradient id="__id5__id6" gradientUnits="userSpaceOnUse" x1="0" y1="384" x2="1438" y2="384"><stop stop-color="#fff7ad" stop-opacity="1" offset="0"></stop><stop stop-color="#ffa9f9" stop-opacity="1" offset="1"></stop></lineargradient></defs><rect x="0" y="0" width="1438" height="768" fill="url(#__id5__id6)"></rect></svg></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 539.703px; height: 67.843px; transform: translate(112.217px, 79.3147px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 539.703px; height: 67.843px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, 3.42151px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 57.0252px; color: rgb(50, 50, 50); line-height: 61px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">History</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1137.46px; height: 285.197px; transform: translate(150.269px, 282.367px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 1137.46px; height: 285.197px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, -1.40175px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Over the past Four decades, the Korea Institute of Quantum Brain and Neural<br>Science (KIQBNS) physician-researchers have been responsible for some of the<br>most important breakthroughs in medicine today.</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p><div class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><p class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">When it comes to science discovery that drives medical breakthroughs, it is often<br>said that “someday, they will find a way.”</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p><div class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><p class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">“They” are here at Quantum Biomedicine and “someday” is today.</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw" style="touch-action: pan-x pan-y pinch-zoom; width: 522.691px; height: 2px; transform: translate(112.217px, 168.21px);"><div class="V7MmMA" style="transform: scale(1); width: 522.691px; height: 2px;"><svg class="Fe_H_Q" style="stroke: rgb(180, 180, 180); fill: rgb(180, 180, 180); width: 522.691px; height: 2px;"><path d="M0,1L522.6913477651046,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="auto" opacity="0" class="_682gpw" style="touch-action: pan-x pan-y pinch-zoom;"></path><g><path d="M0,1L522.6913477651046,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="none"></path></g></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 58.0793px; transform: translate(87.8091px, 679.72px);"><div style="width: 225.154px; height: 58.0793px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 53.7085px; transform: translate(-1.42109e-14px, -2.84217e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(0.603014, 0.603014); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 189, 89); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 189, 89); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(15.3737px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 189, 89); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 189, 89); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(16.5798px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 189, 89); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 189, 89); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PBkSSWYN4wG2ZqZS" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="Ms_IOA"><svg class="_KMJVg" role="presentation" viewBox="0 0 1438 768" preserveAspectRatio="xMidYMid slice"><defs><lineargradient id="__id10__id11" gradientUnits="userSpaceOnUse" x1="0" y1="384" x2="1438" y2="384"><stop stop-color="#0cc0df" stop-opacity="1" offset="0"></stop><stop stop-color="#ffde59" stop-opacity="1" offset="1"></stop></lineargradient></defs><rect x="0" y="0" width="1438" height="768" fill="url(#__id10__id11)"></rect></svg></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1311.48px; height: 380.847px; transform: translate(36px, 211.96px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 1311.48px; height: 380.847px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(8.89042px, -3.07627px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 30.7627px; color: rgb(0, 0, 0); line-height: 43px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(0, 0, 0); font-kerning: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Is it possible to activate cerebrospinal fluid<br>circulation and meningeal lymphatic drainage<br>even when waking?</span></p><div class="cgHgbA PPKxyg Xp24Nw" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 30.7627px; color: rgb(0, 0, 0); line-height: 43px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><div class="cgHgbA PPKxyg Xp24Nw" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 30.7627px; color: rgb(0, 0, 0); line-height: 43px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><p class="cgHgbA PPKxyg Xp24Nw" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 30.7627px; color: rgb(0, 0, 0); line-height: 43px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(0, 0, 0); font-kerning: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(0, 0, 0); font-kerning: normal; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">It has been proven that fluid circulation in the<br>brain is activated during deep sleeping, but the<br>implementation and mechanism are challenged in<br>the waking state.</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 58.0793px; transform: translate(1148.69px, 675.047px);"><div style="width: 225.154px; height: 58.0793px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 53.7085px; transform: translate(-7.10543e-14px, -2.84217e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(0.603014, 0.603014); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 255, 255); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(15.3737px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(16.5798px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PB1rdV9NwFw51Rk5" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="Ms_IOA"><svg class="_KMJVg" role="presentation" viewBox="0 0 1438 768" preserveAspectRatio="xMidYMid slice"><defs><lineargradient id="__id12__id13" gradientUnits="userSpaceOnUse" x1="0" y1="384" x2="1438" y2="384"><stop stop-color="#cdffd8" stop-opacity="1" offset="0"></stop><stop stop-color="#94b9ff" stop-opacity="1" offset="1"></stop></lineargradient></defs><rect x="0" y="0" width="1438" height="768" fill="url(#__id12__id13)"></rect></svg></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 575.222px; height: 494.029px; transform: translate(112.802px, 197.171px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 494.029px; width: 575.222px; transform: scale(1);"><div class="hWv4NA" style="width: 575.222px; height: 494.029px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id14"><path d="M0,0L298.0732406961142,0L298.0732406961142,256L0,256Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id14&quot;); width: 298.073px; height: 256px; transform: scale(1.9298, 1.9298); transform-origin: 0px 0px;"></div></div><svg class="qY_pAA" viewBox="0 0 159.7838480037616 137.23024916102847" style="overflow: hidden; width: 575.222px; height: 494.029px;"><defs><clippath id="__id16"><path d="M0,0L159.7838480037616,0L159.7838480037616,137.23024916102847L0,137.23024916102847Z"></path></clippath></defs><path d="M0,0L159.7838480037616,0L159.7838480037616,137.23024916102847L0,137.23024916102847Z" stroke="#323232" stroke-width="4" stroke-linecap="butt" clip-path="url(#__id16)" fill="none" vector-effect="non-scaling-stroke"></path></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 575.222px; height: 494.029px; transform: translate(749.55px, 197.171px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 494.029px; width: 575.222px; transform: scale(1);"><div class="hWv4NA" style="width: 575.222px; height: 494.029px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id17"><path d="M0,0L298.0732406961142,0L298.0732406961142,256L0,256Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id17&quot;); width: 298.073px; height: 256px; transform: scale(1.9298, 1.9298); transform-origin: 0px 0px;"></div></div><svg class="qY_pAA" viewBox="0 0 159.7838480037616 137.23024916102847" style="overflow: hidden; width: 575.222px; height: 494.029px;"><defs><clippath id="__id19"><path d="M0,0L159.7838480037616,0L159.7838480037616,137.23024916102847L0,137.23024916102847Z"></path></clippath></defs><path d="M0,0L159.7838480037616,0L159.7838480037616,137.23024916102847L0,137.23024916102847Z" stroke="#323232" stroke-width="4" stroke-linecap="butt" clip-path="url(#__id19)" fill="none" vector-effect="non-scaling-stroke"></path></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 539.703px; height: 67.843px; transform: translate(112.8px, 113.587px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 539.703px; height: 67.843px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, 3.42151px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 57.0252px; color: rgb(50, 50, 50); line-height: 61px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Mission Statement</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 539.703px; height: 67.843px; transform: translate(750.133px, 114.587px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 539.703px; height: 67.843px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, 3.42151px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 57.0252px; color: rgb(50, 50, 50); line-height: 61px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Vision</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 58.0793px; transform: translate(93.9248px, 43.7603px);"><div style="width: 225.154px; height: 58.0793px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 53.7085px; transform: translate(-1.42109e-14px, 0px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(0.603014, 0.603014); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 255, 255); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(15.3737px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(16.5798px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 537.756px; height: 141.196px; transform: translate(132.536px, 373.587px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 537.756px; height: 141.196px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0.78498px, -1.40175px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">To create innovative healthcare<br>solutions through “Quantum<br>Biomedical” discovery and promoting<br>wellness the all people.</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 537.756px; height: 213.196px; transform: translate(769.283px, 341.587px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 537.756px; height: 213.196px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0.78498px, -1.40175px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 28.035px; color: rgb(50, 50, 50); line-height: 36px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">To achieve a collaborative scientific<br>environment where pioneering<br>research is conducted and discoveries<br>are translated into novel approaches<br>to disease prevention and treatment<br>for the improvement of health of all.</span></p></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PBY6qz4qrGlzbKDW" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="Ms_IOA"><svg class="_KMJVg" role="presentation" viewBox="0 0 1438 768" preserveAspectRatio="xMidYMid slice"><defs><lineargradient id="__id20__id21" gradientUnits="userSpaceOnUse" x1="719" y1="0" x2="719" y2="768"><stop stop-color="#7b2d9f" stop-opacity="1" offset="0"></stop><stop stop-color="#fdd82e" stop-opacity="1" offset="1"></stop></lineargradient></defs><rect x="0" y="0" width="1438" height="768" fill="url(#__id20__id21)"></rect></svg></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 380.69px; height: 438.673px; transform: translate(98.7795px, 181.171px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 438.673px; width: 380.69px; transform: scale(1);"><div class="hWv4NA" style="width: 380.69px; height: 438.673px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id22"><path d="M0,0L256,0L256,294.9916770757073L0,294.9916770757073Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id22&quot;); background: rgb(255, 251, 245); width: 256px; height: 294.992px; transform: scale(1.48707, 1.48707); transform-origin: 0px 0px;"></div></div><svg class="qY_pAA" viewBox="0 0 105.74717672261093 121.85366018525076" style="overflow: hidden; width: 380.69px; height: 438.673px;"><defs><clippath id="__id24"><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z"></path></clippath></defs><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z" stroke="#fffbf5" stroke-width="8" stroke-linecap="butt" clip-path="url(#__id24)" fill="none" vector-effect="non-scaling-stroke"></path></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 380.69px; height: 438.673px; transform: translate(528.655px, 181.171px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 438.673px; width: 380.69px; transform: scale(1);"><div class="hWv4NA" style="width: 380.69px; height: 438.673px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id25"><path d="M0,0L256,0L256,294.9916770757073L0,294.9916770757073Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id25&quot;); background: rgb(255, 251, 245); width: 256px; height: 294.992px; transform: scale(1.48707, 1.48707); transform-origin: 0px 0px;"></div></div><svg class="qY_pAA" viewBox="0 0 105.74717672261093 121.85366018525076" style="overflow: hidden; width: 380.69px; height: 438.673px;"><defs><clippath id="__id27"><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z"></path></clippath></defs><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z" stroke="#fffbf5" stroke-width="8" stroke-linecap="butt" clip-path="url(#__id27)" fill="none" vector-effect="non-scaling-stroke"></path></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 380.69px; height: 438.673px; transform: translate(958.345px, 181.171px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 438.673px; width: 380.69px; transform: scale(1);"><div class="hWv4NA" style="width: 380.69px; height: 438.673px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id28"><path d="M0,0L256,0L256,294.9916770757073L0,294.9916770757073Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id28&quot;); background: rgb(255, 251, 245); width: 256px; height: 294.992px; transform: scale(1.48707, 1.48707); transform-origin: 0px 0px;"></div></div><svg class="qY_pAA" viewBox="0 0 105.74717672261093 121.85366018525076" style="overflow: hidden; width: 380.69px; height: 438.673px;"><defs><clippath id="__id30"><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z"></path></clippath></defs><path d="M0,0L105.74717672261093,0L105.74717672261093,121.85366018525076L0,121.85366018525076Z" stroke="#fffbf5" stroke-width="8" stroke-linecap="butt" clip-path="url(#__id30)" fill="none" vector-effect="non-scaling-stroke"></path></svg></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 539.703px; height: 67.843px; transform: translate(112.8px, 94.587px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 539.703px; height: 67.843px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, 3.42151px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 57.0252px; color: rgb(252, 253, 254); line-height: 61px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(252, 253, 254); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Our Commitment</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 333.68px; height: 235.33px; transform: translate(122.285px, 289.776px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.68px; height: 235.33px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0.747648px, -1.33509px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 26.7017px; color: rgb(50, 50, 50); line-height: 34px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS (Korea Institute<br>of Quantum Brain and<br>Neural science) is<br>committed to finding<br>practical, inexpensive<br>solutions to real-world<br>health problems.</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 333.68px; height: 269.33px; transform: translate(552.16px, 270.268px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.68px; height: 269.33px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0.747648px, -1.33509px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 26.7017px; color: rgb(50, 50, 50); line-height: 34px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Our organization has<br>been serving the citizens<br>of the world through<br>pioneering and<br>conducting innovative<br>research that led to<br>countless diagnostics,<br>devices and therapies.</span><span class="OYPEnA L7Ipcg" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;"> </span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 333.68px; height: 269.33px; transform: translate(982.011px, 270.268px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.68px; height: 269.33px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0.747648px, -1.33509px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJscCTpk_0, auto; --cAuMqQ: 26.7017px; color: rgb(50, 50, 50); line-height: 34px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(50, 50, 50); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Our organization aims to<br>be committed and<br>devoted to the local<br>society and to play a<br>crucial role in the<br>improvement of the<br>health of the nation and<br>the entire world citizens.</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 58.0793px; transform: translate(1148.69px, 675.047px);"><div style="width: 225.154px; height: 58.0793px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 225.154px; height: 53.7085px; transform: translate(-7.10543e-14px, -2.84217e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(0.603014, 0.603014); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 255, 255); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(15.3737px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 184.758px; height: 7.53574px; transform: translate(16.5798px, 50.5436px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(0.554098, 0.554098); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 255, 255); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 255, 255); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section><section id="PBTdGF9BN9tLVtyz" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(50, 50, 50);"><div><div class="onhyOQ" style="width: 1438px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1438px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="ko-KR" style="width: 1438px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="fbzKiw" style="background: rgb(50, 50, 50);"></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1284.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 46.2761px; height: 46.2761px; transform: translate(324.82px, 606.588px);"><div style="width: 46.2761px; height: 46.2761px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 46.2761px; height: 46.2761px; transform: translate(0px, 0px);"><div style="position: absolute; top: 0px; left: 0px; transform-origin: 0px 0px; height: 46.2761px; width: 46.2761px; transform: scale(1);"><div class="hWv4NA" style="width: 46.2761px; height: 46.2761px; margin-left: 0px; margin-top: 0px;"><svg class="_7KaXww"><defs><clippath id="__id31"><path d="M128,0C57.30755202165845,0 0,57.30755202165844 0,128C0,198.69244797834153 57.307552021658424,256 128,256C198.69244797834153,256 256,198.6924479783416 256,128C256,57.30755202165848 198.6924479783416,0 128,0Z"></path></clippath></defs></svg><div class="bFnJ2A" style="clip-path: url(&quot;#__id31&quot;); background: rgb(255, 251, 245); width: 256px; height: 256px; transform: scale(0.180766, 0.180766); transform-origin: 0px 0px;"></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 29.5993px; height: 23.5px; transform: translate(8.33839px, 11.3881px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 29.5993px; height: 23.5px; transform: scale(1, 1); transform-origin: 0px 0px;"><div><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 18.6667px; color: rgb(36, 48, 160); line-height: 22px; letter-spacing: 0em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><a href="https://www.linkedin.com/in/kwangwoo-kim-793471128/" target="_blank" draggable="false" rel="noopener nofollow" class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(36, 48, 160); font-kerning: none; text-decoration-line: underline; text-decoration-thickness: initial; text-decoration-style: initial;">in</a></p></div></div></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 407.576px; height: 96px; transform: translate(917.624px, 582.296px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 407.576px; height: 96px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(1.12px, 0px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 20px; color: rgb(250, 239, 224); line-height: 24px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(250, 239, 224); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">102, Hoegi-ro, Dongdaemun-gu,<br>Seoul, Republic of Korea</span></p><div class="cgHgbA nxe3IQ Xp24Nw" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 20px; color: rgb(250, 239, 224); line-height: 24px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><br></div><p class="cgHgbA PPKxyg Xp24Nw" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 20px; color: rgb(250, 239, 224); line-height: 24px; letter-spacing: 0.056em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(250, 239, 224); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">kiqbns at gmail</span></p></div></div></div></div></div></div><div style="clip-path: polygon(36px 689.2px, 1402px 689.2px, 1402px 693.2px, 36px 693.2px);"><div class="DF_utQ _682gpw" style="touch-action: pan-x pan-y pinch-zoom; width: 1402.87px; height: 2px; transform: translate(17.5675px, 690.2px) rotate(-0.0816839deg);"><div class="DF_utQ" style="width: 1402.87px; height: 2px;"><div class="V7MmMA" style="transform: scale(1); width: 1402.87px; height: 2px;"><svg class="Fe_H_Q" style="stroke: rgb(238, 228, 219); fill: rgb(238, 228, 219); width: 1402.87px; height: 2px;"><path d="M0,1L1402.8650041356002,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="auto" opacity="0" class="_682gpw" style="touch-action: pan-x pan-y pinch-zoom;"></path><g><path d="M0,1L1402.8650041356002,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="none"></path></g></svg></div></div></div></div><div style="clip-path: polygon(36px 566.251px, 1402px 566.251px, 1402px 570.251px, 36px 570.251px);"><div class="DF_utQ _682gpw" style="touch-action: pan-x pan-y pinch-zoom; width: 1402.87px; height: 2px; transform: translate(17.5675px, 567.251px) rotate(-0.0816839deg);"><div class="DF_utQ" style="width: 1402.87px; height: 2px;"><div class="V7MmMA" style="transform: scale(1); width: 1402.87px; height: 2px;"><svg class="Fe_H_Q" style="stroke: rgb(238, 228, 219); fill: rgb(238, 228, 219); width: 1402.87px; height: 2px;"><path d="M0,1L1402.8650041356002,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="auto" opacity="0" class="_682gpw" style="touch-action: pan-x pan-y pinch-zoom;"></path><g><path d="M0,1L1402.8650041356002,1" stroke-linecap="butt" stroke-width="2" fill="none" pointer-events="none"></path></g></svg></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 196.282px; height: 44.48px; transform: translate(112.217px, 608.056px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 196.282px; height: 44.48px; transform: scale(1, 1); transform-origin: 0px 0px;"><div style="transform: translate(0px, 2.24px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA _7rUwsA"><p class="cgHgbA nxe3IQ Xp24Nw PanoWQ" style="font-family: YAFdJi-0PQg_0, auto; --cAuMqQ: 37.3333px; color: rgb(250, 239, 224); line-height: 40px; letter-spacing: -0.02em; --pY_8zA: 0; text-transform: none; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 300; font-style: normal; color: rgb(250, 239, 224); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Get social</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1013.99px; height: 287.214px; transform: translate(212.006px, 160.037px);"><div style="width: 1013.99px; height: 287.214px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1013.99px; height: 241.878px; transform: translate(-5.68434e-14px, 2.84217e-14px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 373.381px; height: 89.0667px; transform: scale(2.7157, 2.7157); transform-origin: 0px 0px;"><div style="transform: translate(0px, -7.46667px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA pYZEjA Xp24Nw PanoWQ" style="font-family: YAFdJl47p6A_0, auto; --cAuMqQ: 74.6667px; color: rgb(255, 251, 245); line-height: 104px; letter-spacing: 0em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">KIQBNS</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 779.082px; height: 71.6807px; transform: translate(95.7271px, 187.028px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 321.716px; height: 29.6px; transform: scale(2.42165, 2.42165); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Korea Institute of</span></p><p class="cgHgbA PPKxyg Xp24Nw" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 400; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">Quantum Brain and Neural Science</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 832.064px; height: 33.9375px; transform: translate(69.2362px, 253.277px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(2.4954, 2.4954); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 832.064px; height: 33.9375px; transform: translate(74.6676px, 253.277px);"><div class="aF9o6Q _0yZ6Qg" style="writing-mode: horizontal-tb; width: 333.439px; height: 13.6px; transform: scale(2.4954, 2.4954); transform-origin: 0px 0px;"><div style="transform: translate(3.468px, -1.2px);"><div class="E8yZTA"><div><div lang="ko-KR" class="AdBbhQ hGbcYA rLWGlw _7rUwsA"><p class="cgHgbA PPKxyg Xp24Nw PanoWQ" style="font-family: YACgETiWKS8_0, auto; --cAuMqQ: 12px; color: rgb(255, 251, 245); line-height: 16px; letter-spacing: 0.289em; --pY_8zA: 0; text-transform: uppercase; --oJepFA: 0; --uYCVzQ: none; list-style-type: none;"><span class="OYPEnA" style="font-size: 1em; font-weight: 700; font-style: normal; color: rgb(255, 251, 245); font-kerning: none; text-decoration-line: none; text-decoration-thickness: initial; text-decoration-style: initial;">||||||||||||||||||||||||||||||||||||||||||||||||</span></p></div></div></div></div></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1438px; height: 768px; margin: 0px;"></div></div></div></div></section></div><div><style>
-    .footer-overflow-container {
-        display: flex;
-        background-color: #000000;
-        position: relative;
-    }
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>KIQBNS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    .footer-container {
-        flex-grow: 1;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 6px;
-    }
+    <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    .footer-pill-link {
-        appearance: none;
-        text-decoration: none;
-    }
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    .footer-pill {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1000px;
-        border: none;
-        background: none;
-        padding: 4px 8px;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        white-space: nowrap;
-        text-decoration: none;
-        font-weight: 600;
-        font-style: normal;
-        font-size: calc(12px * var(--rfso, var(--bfso, 1)));
-        color: #ffffff;
-        transition: background-color 0.2s;
-    }
-    .footer-pill:hover {
-        cursor: pointer;
-    }
-    .footer-pill + .footer-pill {
-        margin-left: 8px;
-    }
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
-    .footer-pill-primary {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
 
-    .footer-pill-primary:hover > .footer-pill-primary-background {
-        opacity: 1;
-    }
+<body class="index-page">
 
-    .footer-pill-primary-background {
-        position: absolute;
-        z-index: -1;
-        border-radius: 1000px;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, #00C4CC 0%, #7D2AE8 100%);
-        opacity: 0;
-        overflow: hidden;
-        transition: opacity 0.2s;
-    }
+  <header id="header" class="header d-flex flex-column justify-content-center">
 
-    /* Subtle wipe effect */
-    .footer-pill-primary-background::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: linear-gradient(to right, rgba(125, 42, 232, 0) 0%, #1a1a1a calc(50px + 20%), #1a1a1a 100%);
-        transform: translateX(0);
-        transition: transform 0.7s;
-    }
-    .footer-pill-primary:hover > .footer-pill-primary-background::after {
-        transform: translateX(110%);
-    }
+    <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    .footer-pill-primary-background > svg {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform-origin: center;
-        transform: translateY(-50%);
-        width: 100%;
-    }
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>History</span></a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Mission</span></a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
 
-    .animation-container {
-        animation: spin linear 12s infinite;
-        animation-play-state: paused;
-    }
-    .footer-pill-primary:hover > .footer-pill-primary-background .animation-container {
-        animation-play-state: running;
-    }
+  </header>
 
-    .footer-pill-secondary {
-        background-color: rgba(255, 255, 255, 0);
-    }
-    .footer-pill-secondary:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    .footer-pill-secondary:active, .footer-pill-secondary.active {
-        background-color: rgba(255, 255, 255, 0.15)
-    }
+  <main class="main">
 
-    .inline-icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
-    }
-    .inline-icon > svg {
-        fill: rgba(218, 218, 218, 1);
-    }
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
 
-    .inline-icon-logo {
-        display: inline-block;
-        height: 15px;
-        margin-left: 5px;
-    }
-    .inline-icon-logo > svg {
-        height: 100%;
-    }
+      <img src="assets/img/hero-bg.jpg" alt="">
 
-    .modal-backdrop {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        transition: opacity 0.35s, visibility 0.35s;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    .modal-backdrop.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
 
-    .report-form-modal {
-        display: block;
-        box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 6px;
-        width: 367px;
-        transform: translate3d(0, calc(-100% + 24px), 0);
-        z-index: 10000;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        background-color: #ffffff;
-        border-radius: 8px;
-        margin: 0;
-        box-shadow: 0px 2px 18px 0px rgba(14, 19, 24, 0.25), 0px 0px 1px 0px rgba(14, 19, 24, 0.02);
-        transition-duration: 0.35s;
-        transition-property: opacity, transform, visibility;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    .report-form-modal.active {
-        transform: translate3d(0, calc(-100% + 8px), 0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
+      <div class="container" data-aos="zoom-out">
+                <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>KIQBNS</h2>
+            <p><span class="typed" data-typed-items="Korea Institute of Quantum Brain and Neural Sciences">Welcome</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <!-- social links example
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              -->
+              <a href="https://www.linkedin.com/in/kwangwoo-kim-793471128/"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    .form-content {
-        margin: 32px;
-        outline-offset: 34px;
-    }
+    </section><!-- /Hero Section -->
 
-    .form-content > * {
-        margin: 16px 0;
-    }
+    <!-- About Section -->
+    <section id="about" class="about section">
 
-    .form-title {
-        font-size: calc(24px * var(--rfso, var(--bfso, 1)));
-        font-weight: 700;
-    }
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+      </div><!-- End Section Title -->
 
-    .form-body {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 400;
-        color: rgba(14, 19, 24, 0.7);
-    }
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    .form-body-bold {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 600;
-        line-height: 22.4px;
-        color: rgba(14, 19, 24, 1);
-    }
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h1><strong>Korea Institute of Quantum Brain and Neural Sciences</strong></h1>
+            
+            <p class="py-3">
+              <h2>Can cerebrospinal fluid circulation and meningeal lymphatic drainage be activated while awake? </h2>
+            </p>
+            <div class="row">
+              <div class="col-lg-10">
+                <ul>
+                  <li></li>
+                  <li><i class="bi bi-chevron-right"></i> 
+                    <h3>This is the focus of our lab, neurodegeneration, neuroinflammation, immunology, neurometabolic disorders</h3>
+                  </li>
+                </ul>
+              </div>
+            </div>   
+             
+            <p class="py-3">
+              <h2>Is it possible to activate cerebrospinal fluid circulation and meningeal lymphatic drainage even when waking?</h2>
+            </p>
+            <div class="row">
+              <div class="col-lg-10">
+                <ul>
+                  <li></li>
+                  <li><i class="bi bi-chevron-right"></i> 
+                    <h3>It has been proven that fluid circulation in the brain is activated during deep sleeping, but the implementation and mechanism are challenged in the waking state.</h3>
+                  </li>
+                </ul>
+              </div>
+            </div>   
 
-    .form-radio-input {
-        display: grid;
-        grid-template-columns: 24px auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-          "radio-button radio-label"
-          ". radio-description"
-    }
-    .form-radio-input:hover {
-        cursor: pointer;
-    }
+          </div>
+        </div>
 
-    .radio-button-input {
-        opacity: 0;
-        margin: 0;
-        width: 0;
-        height: 0;
-    }
+      </div>
 
-    .radio-button {
-        align-self: flex-start;
-        grid-area: radio-button;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin: 4px 8px 0 0;
-        vertical-align: middle;
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 1px rgba(53, 71, 90, .2);
-        outline: none;
-        background-color: #ffffff;
-        flex-shrink: 0;
-    }
-    .radio-button-input:checked + .radio-button {
-        background: #fff;
-        box-shadow: inset 0 0 0 5px #8b3dff;
-        transition: box-shadow .1s ease-in-out, background-color .1s ease-in-out;
-    }
-    .form-radio-input:hover .radio-button-input:not(:checked) + .radio-button {
-        box-shadow: inset 0 0 0 1px rgba(30, 41, 51, .45);
-    }
+    </section><!-- /About Section -->
 
-    .radio-button-input + .radio-button::after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background-color: transparent;
-        display: block;
-        margin: 5px;
-        border-radius: 50%;
-    }
-    .radio-button-input:checked + .radio-button::after {
-        background-color: #ffffff;
-        transition: background-color .1s ease-in-out;
-    }
+    </section><!-- /Skills Section -->
 
-    .form-radio-label {
-        grid-area: radio-label;
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 600;
-        line-height: 22.4px;
-        color: rgba(14, 19, 24, 1);
-    }
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
 
-    .form-radio-desc {
-        grid-area: radio-description;
-        font-size: calc(12px * var(--rfso, var(--bfso, 1)));
-        font-weight: 400;
-        color: rgba(14, 19, 24, 0.7);
-        margin: 0;
-    }
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>History</h2>
+      </div><!-- End Section Title -->
 
-    .form-buttons {
-        margin-top: 32px;
-        display: grid;
-        grid-gap: 8px;
-        grid-template-columns: auto auto;
-        justify-content: flex-end;
-    }
+      <div class="container">
 
-    .tertiary-button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: rgba(13, 18, 22, 0);
-        border-radius: 4px;
-        color: rgb(13, 18, 22);
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 2px;
-        transition: background-color 0.2s;
-    }
-    .tertiary-button:hover {
-        background-color: rgba(64, 87, 109, .07);
-    }
-    .tertiary-button:active {
-        background-color: rgba(57, 76, 96, .15);
-    }
+        <div class="row">
 
-    .button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: rgba(64, 87, 109, 0.07);
-        border-radius: 4px;
-        color: #0e1318;
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 2px;
-        transition: background-color 0.2s;
-    }
-    .button:hover {
-        background-color: rgba(57, 76, 96, .15);
-    }
-    .button:active {
-        background-color: rgba(53, 71, 90, .2);
-    }
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
-    .submit-button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: #7d2ae8;
-        border-radius: 4px;
-        color: #ffffff;
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 4px;
-        transition: background-color 0.2s;
-    }
-    .submit-button:hover {
-        background-color: #8d39fa;
-    }
-    .submit-button:active {
-        background-color: #6718cf;
-    }
+            <div class="resume-item pb-0">
+              <h4>Over the past Four decades, the Korea Institute of Quantum Brain and Neural
+Sciences (KIQBNS) physician-researchers have been responsible for some of the
+most important breakthroughs in medicine today.</h4>
+            </div><!-- Edn Resume Item -->
 
-    .button-text {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        display: inline-block;
-        max-width: 100%;
-        overflow: hidden;
-        padding: 0 8px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: 600;
-        transition: all 0.2s;
-    }
+            <p>&nbsp;<br></p>
+            <div class="resume-item pb-0">
+              <h4>When it comes to science discovery that drives medical breakthroughs, it is often
+said that "someday, they will find a way."</h4>
+            </div><!-- Edn Resume Item -->
 
-    .a-link:visited {
-        color: rgba(14, 19, 24, 0.7)
-    }
-    .a-link {
-        text-decoration: underline;
-        color: rgba(14, 19, 24, 0.7)
-    }
-    .a-link:hover {
-        color: #7d2ae8;
-    }
+            <p>&nbsp;<br></p>
+            <div class="resume-item pb-0">
+              <h4>“They” are here at Quantum Biomedicine and “someday” is today.<br></h4>            </div><!-- Edn Resume Item -->
 
-    @keyframes spin {
-        from {
-            transform: rotate(0turn);
-        }
+          </div>
 
-        to {
-            transform: rotate(1turn);
-        }
-    }
+        <br><br><br><img src="./assets/img/logo-g-s.png" alt=""><br></br>
 
-    @supports selector(:focus-visible) {
-        .radio-button-input:focus-visible + .radio-button {
-            outline: auto;
-        }
+        </div>
 
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background::after {
-            transform: translateX(110%);
-        }
+      </div>
 
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background {
-            opacity: 1;
-        }
+    </section><!-- /Resume Section -->
 
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background .animation-container {
-            animation-play-state: running;
-        }
-    }
 
-    @supports not selector(:focus-visible) {
-        .radio-button-input:focus + .radio-button {
-            outline: auto;
-        }
+    <!-- Services Section -->
+    <section id="services" class="services section">
 
-        .footer-pill-primary:focus > .footer-pill-primary-background::after {
-            transform: translateX(110%);
-        }
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mission</h2>
+      </div><!-- End Section Title -->
 
-        .footer-pill-primary:focus > .footer-pill-primary-background {
-            opacity: 1;
-        }
+      <div class="container">
 
-        .footer-pill-primary:focus > .footer-pill-primary-background .animation-container {
-            animation-play-state: running;
-        }
-    }
+        <div class="row gy-4">
 
-    /* stylelint-disable-next-line media-feature-name-disallowed-list */
-    @media only screen and (max-width: 600px) {
-        .modal-backdrop {
-            background-color: rgba(14, 19, 24, 0.45);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item item-cyan position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                </svg>
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Mission Statement</h3>
+              </a>
+              <p><h4>To create innovative healthcare solutions through “Quantum Biomedical” discovery and promoting wellness the all people.</h4></p>
+            </div>
+          </div><!-- End Service Item -->
 
-        .report-form-modal {
-            width: 100%;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 8px 8px 0 0;
-            transform: translate3d(0, 33%, 0);
-        }
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item item-orange position-relative">
+              <div class="icon">
+                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+                </svg>
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Vision</h3>
+              </a>
+              <p><h4>To achieve a collaborative scientific environment where pioneering research is conducted and discoveries are translated into novel approaches to disease prevention and treatment for the improvement of health of all.</h4></p>
+            </div>
+          </div><!-- End Service Item -->
 
-        .report-form-modal.active {
-            transform: translate3d(0, 0, 0);
-        }
+        </div>
 
-        .form-content {
-            margin: 16px;
-        }
+      </div>
 
-        .form-buttons {
-            display: grid;
-            grid-gap: 8px;
-            grid-template-columns: 1fr;
-        }
+    </section><!-- /Services Section -->
 
-        .submit-button {
-            order: -1;
-        }
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
 
-        @supports (padding: env(safe-area-inset-bottom)) {
-            .footer-container {
-                padding: 6px 6px calc(6px + env(safe-area-inset-bottom)) 6px;
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Commitments</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
             }
+          </script>
+          <div class="swiper-wrapper">
 
-            .form-content {
-                margin: 16px 16px calc(16px + env(safe-area-inset-bottom)) 16px;
-            }
-        }
-    }
-    @media (prefers-reduced-motion) {
-        .report-form-modal, .report-form-modal.active {
-            transition-property: opacity, visibility;
-            transform: translate3d(0, calc(-100% + 8px), 0);
-        }
-        @media only screen and (max-width: 600px) {
-            .report-form-modal, .report-form-modal.active {
-                transform: translate3d(0, 0, 0);
-            }
-        }
-        .animation-container {
-            animation-play-state: paused !important;
-        }
-        .footer-pill-primary-background::after {
-            transform: translateX(0);
-            opacity: 0;
-            transition: opacity 0.7s;
-        }
-        .footer-pill-primary-background > svg {
-            display: none;
-        }
-    }
-</style>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p><br>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>KIQBNS (Korea Institute of Quantum Brain and Neural sciences) is committed to finding practical, inexpensive solutions to real-world health problems.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      <br><br></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
 
-</div></div></div></div></div></div></main></div></div><script nonce="">(function() {window['__canva_public_path__'] = '_assets\/'; window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"4fae5166b56a1d7ddf289b70c12e5be51b3483e8","K":1754898092,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"},"C":8388608},"b":{"A?":"H","C":{"a":"WEB"},"D":{"a":"WEB","c":"ko-KR"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"A","A":"TAGcbLa0hys","B":1},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"ko-KR","D":"KIQBNS WEB","E":"","F":[],"G":{},"Y":{},"a":[],"b":[],"V":[],"W":[],"A":[{"A?":"j","Z":{"A?":"A","A":"TAGcbLa0hys","B":1},"a":"PB96TNBsrN9wzgCg","R":false,"S":false,"U":false,"Q":{},"v":"B","t":[{"A?":"i","a":"PByNl2Hp56bXbYxt","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":1},"D":{"A":true,"B":{"A":{"A":"MAGvro2x4TI","B":1},"I":{"A":"MAGvrr3dBAY","B":1},"B":{"A":-6.285714285714391,"B":-1.1368683772161603E-13,"D":1366.0000000000002,"C":780.5714285714288,"E":0.0},"E":0.0,"C":{}},"C":"#fffbf5","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"H","A":592.4075676093124,"B":460.4795689329435,"D":508.2731529616014,"C":143.96957382228828,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":105.7609300325746,"y":{},"c":[{"A?":"K","A":-2.1316282072803006E-14,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"font-family":{"B":"YAFdJl47p6A,0"},"text-align":{"B":"center"},"color":{"B":"#fffbf5"},"text-transform":{"B":"uppercase"},"font-weight":{"B":"bold"},"font-size":{"B":"74.6667"}}},{"A?":"B","A":6},{"A?":"A","A":{"spacing":{"B":"0.0"},"leading":{"B":"1400.0"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"tracking":{},"spacing":{},"font-family":{},"font-size":{},"color":{},"text-transform":{},"font-weight":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":68.86917346165848,"B":35.249587848865076,"D":286.88139313108445,"C":26.3949730766832,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Korea Institute of\\nQuantum Brain and Neural Science\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"color":{"B":"#fffbf5"},"text-transform":{"B":"uppercase"},"tracking":{"B":"289.0"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"}}},{"A?":"B","A":51},{"A?":"A","A":{"leading":{"B":"1400.0"},"font-weight":{"B":"normal"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[19,33]},"d":"A","e":321.71615451206856,"f":29.6,"l":false,"h":"A"},{"A?":"K","A":93.26414653834166,"B":25.494834713360603,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#fffbf5"},"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"}}},{"A?":"B","A":48},{"A?":"A","A":{"spacing":{"B":"0.0"},"font-style":{"B":"normal"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":93.26414653834166,"B":27.494834713360603,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#fffbf5"},"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"}}},{"A?":"B","A":48},{"A?":"A","A":{"spacing":{"B":"0.0"},"font-style":{"B":"normal"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]},{"A?":"i","a":"PBfs3mS0TZj77FC5","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":2},"D":{"K":{"A?":"A","A":[{"A":"#8c52ff","B":0.0,"C":0.0},{"A":"#ff914d","B":0.0,"C":1.0}],"B":90.0},"D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"I","A":322.20205947807995,"B":117.30364404212469,"D":536.2000700000001,"C":306.40004000000005,"E":0.0,"F":0.27,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"B":{"A":{"A":"MAGvrj6fF70","B":1},"I":{"A":"MAGvriJyUBg","B":1},"B":{"A":-116.71656899493408,"B":-238.25036957423015,"D":1060.7605728522565,"C":606.148898772718,"E":0.0},"E":0.0,"C":{}},"D":0.0,"F":false,"J":false,"G":true,"H":false},"e":[]},{"A?":"K","A":97.72531941053833,"B":95.49398955790366,"D":1017.199008205374,"C":147.82981,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Korea Institute of \\nQuantum Brain and Neural Science\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1340.0"},"color":{"B":"#ffffff"},"tracking":{"B":"-20.0"},"font-weight":{"B":"bold"},"font-size":{"B":"58.3585"},"font-family":{"B":"YAFdJscCTpk,0"}}},{"A?":"B","A":53},{"A?":"A","A":{"leading":{},"color":{},"tracking":{},"font-weight":{},"font-size":{},"font-family":{}}}],"E":{}},"b":{"A":[20,33]},"j":{"A":[{"A":"lift","B":{"intensity":"0.5"}}],"B":[]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"K","A":322.2020594780799,"B":748.7678932432304,"D":519.0673695327769,"C":306.40004,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Can cerebrospinal fluid circulation and meningeal lymphatic drainage be activated while awake? \\n\\nThis is the focus of our lab, neurodegeneration, neuroinflammation, immunology , neurometabolic disorders\\n"}],"B":[{"A?":"A","A":{"tracking":{"B":"56.0"},"font-weight":{"B":"bold"},"color":{"B":"#2430a0"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"27.9998"}}},{"A?":"B","A":203},{"A?":"A","A":{"tracking":{},"font-weight":{},"color":{},"font-family":{},"font-size":{}}}],"E":{}},"b":{"A":[36,33,27,1,30,19,32,25]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"H","A":675.0468615815089,"B":1112.6929977632776,"D":225.15374842060478,"C":58.079334439415184,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":96.31505174711651,"y":{},"c":[{"A?":"K","A":7.105427357601002E-15,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"text-transform":{"B":"uppercase"},"font-weight":{"B":"bold"},"font-size":{"B":"74.6667"},"font-family":{"B":"YAFdJl47p6A,0"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"leading":{"B":"1400.0"},"tracking":{"B":"0.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-weight":{},"text-align":{},"leading":{},"tracking":{},"spacing":{},"font-family":{},"font-size":{},"color":{},"text-transform":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":25.494834713360746,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#ffffff"}}},{"A?":"B","A":48},{"A?":"A","A":{"leading":{"B":"1400.0"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{},"tracking":{},"text-align":{},"font-weight":{},"color":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":27.494834713360802,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#ffffff"}}},{"A?":"B","A":48},{"A?":"A","A":{"leading":{"B":"1400.0"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{},"tracking":{},"text-align":{},"font-weight":{},"color":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]},{"A?":"i","a":"PBjgdqJgrSZv1fHx","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":6},"D":{"K":{"A?":"A","A":[{"A":"#fff7ad","B":0.0,"C":0.0},{"A":"#ffa9f9","B":0.0,"C":1.0}],"B":90.0},"D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"K","A":79.31466767668354,"B":76.21718764324487,"D":539.7034963869039,"C":67.843024,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"History \\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1080.0"},"color":{"B":"#323232"},"tracking":{"B":"-20.0"},"font-weight":{"B":"light"},"font-size":{"B":"57.0252"},"font-family":{"B":"YAFdJi-0PQg,0"}}},{"A?":"B","A":9},{"A?":"A","A":{"leading":{},"color":{},"tracking":{},"font-weight":{},"font-size":{},"font-family":{}}}],"E":{}},"b":{"A":[9]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"K","A":282.36711377191284,"B":114.26868441095576,"D":1137.4626311780885,"C":285.1965,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Over the past Four decades, the Korea Institute of Quantum Brain and Neural Science (KIQBNS) physician-researchers have been responsible for some of the most important breakthroughs in medicine today. \\n\\nWhen it comes to science discovery that drives medical breakthroughs, it is often said that “someday, they will find a way.” \\n\\n“They” are here at Quantum Biomedicine and “someday” is today.\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"color":{"B":"#323232"},"tracking":{"B":"56.0"},"font-weight":{"B":"light"},"font-size":{"B":"28.035"},"font-family":{"B":"YAFdJscCTpk,0"}}},{"A?":"B","A":392},{"A?":"A","A":{"style":{"B":"body"},"text-align":{"B":"start"},"list-marker":{"B":"none"},"decoration":{"B":"none"},"list-level":{"B":"0.0"},"text-transform":{"B":"none"},"link":{"B":""},"direction":{"B":"ltr"},"kerning":{"B":"0.0"},"head-indent":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[76,77,49,1,82,44,1,63]},"d":"C","l":false,"g":false,"h":"A"},{"A?":"U","A":168.21036857284076,"B":76.21718764324487,"D":522.6913477651046,"C":2.0,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":2,"b":{"C":{"A":169.21036857284076,"B":76.21718764324487}},"c":{"C":{"A":169.21036857284076,"B":598.9085354083495}},"d":"#b4b4b4","e":[],"f":true,"g":[],"h":[]},{"A?":"H","A":679.7203589709849,"B":51.80909035224067,"D":225.15374842060478,"C":58.079334439415184,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":96.31505174711651,"y":{},"c":[{"A?":"K","A":7.105427357601002E-15,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffbd59"},"text-transform":{"B":"uppercase"},"font-weight":{"B":"bold"},"font-size":{"B":"74.6667"},"font-family":{"B":"YAFdJl47p6A,0"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"leading":{"B":"1400.0"},"tracking":{"B":"0.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"font-weight":{},"text-align":{},"leading":{},"tracking":{},"spacing":{},"font-family":{},"font-size":{},"color":{},"text-transform":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":25.494834713360746,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#ffbd59"}}},{"A?":"B","A":48},{"A?":"A","A":{"leading":{"B":"1400.0"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{},"tracking":{},"text-align":{},"font-weight":{},"color":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":27.494834713360802,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#ffbd59"}}},{"A?":"B","A":48},{"A?":"A","A":{"leading":{"B":"1400.0"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{},"tracking":{},"text-align":{},"font-weight":{},"color":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]},{"A?":"i","a":"PBkSSWYN4wG2ZqZS","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"D":{"K":{"A?":"A","A":[{"A":"#0cc0df","B":0.0,"C":0.0},{"A":"#ffde59","B":0.0,"C":1.0}],"B":90.0},"D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"K","A":211.96024404212486,"B":0.0,"D":1311.4758637894479,"C":380.84746,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Is it possible to activate cerebrospinal fluid circulation and meningeal lymphatic drainage even when waking?\\n\\n\\n It has been proven that fluid circulation in the brain is activated during deep sleeping, but the implementation and mechanism are challenged in the waking state.\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"leading":{"B":"1400.0"},"tracking":{"B":"289.0"},"font-kerning":{"B":"normal"},"spacing":{"B":"0.0"},"font-family":{"B":"YAFdJi-0PQg,0"},"font-size":{"B":"30.7627"},"color":{"B":"#000000"},"text-transform":{"B":"uppercase"}}},{"A?":"B","A":276},{"A?":"A","A":{"text-align":{},"leading":{},"tracking":{},"font-kerning":{},"spacing":{},"font-family":{},"font-size":{},"color":{},"text-transform":{}}}],"E":{}},"b":{"A":[47,45,18,1,1,50,49,47,18]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"H","A":675.0468615815089,"B":1112.6929977632776,"D":225.15374842060478,"C":58.079334439415184,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":96.31505174711651,"y":{},"c":[{"A?":"K","A":7.105427357601002E-15,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-size":{"B":"74.6667"},"font-weight":{"B":"bold"},"font-family":{"B":"YAFdJl47p6A,0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"tracking":{"B":"0.0"},"leading":{"B":"1400.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-size":{},"font-weight":{},"font-family":{},"text-transform":{},"text-align":{},"tracking":{},"leading":{},"spacing":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":25.494834713360746,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":27.494834713360802,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]},{"A?":"i","a":"PB1rdV9NwFw51Rk5","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":4},"D":{"K":{"A?":"A","A":[{"A":"#cdffd8","B":0.0,"C":0.0},{"A":"#94b9ff","B":0.0,"C":1.0}],"B":90.0},"D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"J","A":197.17110302029747,"B":76.80246573680819,"D":575.2218528135418,"C":494.02889697970244,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M0 0H64V64H0z","B":{"A":false,"D":0.0,"F":false,"J":false,"G":false,"H":false},"C":{"A":2.0,"B":"#323232","C":[],"f":true},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":159.7838480037616,"C":137.23024916102847,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"leading":{"B":"1200.0"},"text-transform":{"B":"none"},"font-size":{"B":"20.0"},"font-family":{"B":"YAFdJs2qTWQ,0"},"color":{"B":"#323232"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"text-transform":{},"font-size":{},"font-family":{},"color":{},"tracking":{}}}],"E":{}},"B":{"A":[]},"D":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":494.02889697970244}},{"A?":"J","A":197.17110302029758,"B":713.5503167720589,"D":575.2218528135418,"C":494.02889697970244,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M0 0H64V64H0z","B":{"A":false,"D":0.0,"F":false,"J":false,"G":false,"H":false},"C":{"A":2.0,"B":"#323232","C":[],"f":true},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":159.7838480037616,"C":137.23024916102847,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"leading":{"B":"1200.0"},"text-transform":{"B":"none"},"font-size":{"B":"20.0"},"font-family":{"B":"YAFdJs2qTWQ,0"},"color":{"B":"#323232"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"text-transform":{},"font-size":{},"font-family":{},"color":{},"tracking":{}}}],"E":{}},"B":{"A":[]},"D":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":494.02889697970244}},{"A?":"K","A":113.58698186617374,"B":76.79999999999995,"D":539.7034963869039,"C":67.843024,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Mission Statement\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1080.0"},"color":{"B":"#323232"},"tracking":{"B":"-20.0"},"font-weight":{"B":"light"},"font-size":{"B":"57.0252"},"font-family":{"B":"YAFdJi-0PQg,0"}}},{"A?":"B","A":18},{"A?":"A","A":{"leading":{},"color":{},"tracking":{},"font-weight":{},"font-size":{},"font-family":{}}}],"E":{}},"b":{"A":[18]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"K","A":114.58698186617374,"B":714.133129128814,"D":539.7034963869039,"C":67.843024,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Vision\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1080.0"},"color":{"B":"#323232"},"tracking":{"B":"-20.0"},"font-weight":{"B":"light"},"font-size":{"B":"57.0252"},"font-family":{"B":"YAFdJi-0PQg,0"}}},{"A?":"B","A":7},{"A?":"A","A":{"leading":{},"color":{},"tracking":{},"font-weight":{},"font-size":{},"font-family":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"H","A":43.7603327802924,"B":57.9247552785572,"D":225.15374842060478,"C":58.079334439415184,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":96.31505174711651,"y":{},"c":[{"A?":"K","A":7.105427357601002E-15,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-size":{"B":"74.6667"},"font-weight":{"B":"bold"},"font-family":{"B":"YAFdJl47p6A,0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"tracking":{"B":"0.0"},"leading":{"B":"1400.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-size":{},"font-weight":{},"font-family":{},"text-transform":{},"text-align":{},"tracking":{},"leading":{},"spacing":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":25.494834713360746,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":27.494834713360802,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]},{"A?":"K","A":373.5873015101487,"B":96.535575073882,"D":537.7556341393943,"C":141.1965,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"To create innovative healthcare solutions through “Quantum Biomedical” discovery and promoting wellness the all people.\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"text-align":{"B":"center"},"tracking":{"B":"56.0"},"color":{"B":"#323232"},"font-weight":{"B":"light"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"28.035"}}},{"A?":"B","A":119},{"A?":"A","A":{"list-level":{"B":"0.0"},"head-indent":{"B":"0.0"},"style":{"B":"body"},"text-transform":{"B":"none"},"link":{"B":""},"decoration":{"B":"none"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"direction":{"B":"ltr"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[32,27,36,25]},"d":"C","l":false,"g":false,"h":"A"},{"A?":"K","A":341.5873015101487,"B":733.2834261091326,"D":537.7556341393943,"C":213.1965,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"To achieve a collaborative scientific environment where pioneering research is conducted and discoveries are translated into novel approaches to disease prevention and treatment for the improvement of health of all.\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"text-align":{"B":"center"},"tracking":{"B":"56.0"},"color":{"B":"#323232"},"font-weight":{"B":"light"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"28.035"}}},{"A?":"B","A":215},{"A?":"A","A":{"list-level":{"B":"0.0"},"head-indent":{"B":"0.0"},"style":{"B":"body"},"text-transform":{"B":"none"},"link":{"B":""},"decoration":{"B":"none"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"direction":{"B":"ltr"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[38,29,38,37,36,38]},"d":"C","l":false,"g":false,"h":"A"}],"I":[]},{"A?":"i","a":"PBY6qz4qrGlzbKDW","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":3},"D":{"K":{"A?":"A","A":[{"A":"#7b2d9f","B":0.0,"C":0.0},{"A":"#fdd82e","B":0.0,"C":1.0}],"B":180.0},"D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"J","A":181.1711030202975,"B":62.77950783157223,"D":380.6898362013993,"C":438.6731766669027,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M0 0H64V64H0z","B":{"A":false,"C":"#fffbf5","D":0.0,"F":false,"J":false,"G":false,"H":false},"C":{"A":4.0,"B":"#fffbf5","C":[],"f":true},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":105.74717672261093,"C":121.85366018525076,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"leading":{"B":"1200.0"},"text-transform":{"B":"none"},"font-size":{"B":"20.0"},"font-family":{"B":"YAFdJs2qTWQ,0"},"color":{"B":"#ffffff"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"text-transform":{},"font-size":{},"font-family":{},"color":{},"tracking":{}}}],"E":{}},"B":{"A":[]},"D":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":438.6731766669027}},{"A?":"J","A":181.1711030202975,"B":492.65508189930034,"D":380.6898362013993,"C":438.6731766669027,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M0 0H64V64H0z","B":{"A":false,"C":"#fffbf5","D":0.0,"F":false,"J":false,"G":false,"H":false},"C":{"A":4.0,"B":"#fffbf5","C":[],"f":true},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":105.74717672261093,"C":121.85366018525076,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"leading":{"B":"1200.0"},"text-transform":{"B":"none"},"font-size":{"B":"20.0"},"font-family":{"B":"YAFdJs2qTWQ,0"},"color":{"B":"#ffffff"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"text-transform":{},"font-size":{},"font-family":{},"color":{},"tracking":{}}}],"E":{}},"B":{"A":[]},"D":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":438.6731766669027}},{"A?":"J","A":181.1711030202975,"B":922.3449181006997,"D":380.6898362013993,"C":438.6731766669027,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M0 0H64V64H0z","B":{"A":false,"C":"#fffbf5","D":0.0,"F":false,"J":false,"G":false,"H":false},"C":{"A":4.0,"B":"#fffbf5","C":[],"f":true},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":105.74717672261093,"C":121.85366018525076,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"leading":{"B":"1200.0"},"text-transform":{"B":"none"},"font-size":{"B":"20.0"},"font-family":{"B":"YAFdJs2qTWQ,0"},"color":{"B":"#ffffff"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"text-transform":{},"font-size":{},"font-family":{},"color":{},"tracking":{}}}],"E":{}},"B":{"A":[]},"D":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":438.6731766669027}},{"A?":"K","A":94.58698186617374,"B":76.79999999999995,"D":539.7034963869039,"C":67.843024,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Our Commitment\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1080.0"},"color":{"B":"#fcfdfe"},"tracking":{"B":"-20.0"},"font-weight":{"B":"light"},"font-size":{"B":"57.0252"},"font-family":{"B":"YAFdJi-0PQg,0"}}},{"A?":"B","A":15},{"A?":"A","A":{"leading":{},"color":{},"tracking":{},"font-weight":{},"font-size":{},"font-family":{}}}],"E":{}},"b":{"A":[15]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"K","A":289.7761113537488,"B":86.2846351994661,"D":333.6795814656117,"C":235.32983,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS (Korea Institute of Quantum Brain and Neural science) is committed to finding practical, inexpensive solutions to real-world health problems. \\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"text-align":{"B":"center"},"tracking":{"B":"56.0"},"color":{"B":"#323232"},"font-weight":{"B":"light"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"26.7017"}}},{"A?":"B","A":149},{"A?":"A","A":{"list-level":{"B":"0.0"},"head-indent":{"B":"0.0"},"style":{"B":"body"},"text-transform":{"B":"none"},"link":{"B":""},"decoration":{"B":"none"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"direction":{"B":"ltr"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[24,21,19,21,23,24,18]},"d":"C","l":false,"g":false,"h":"A"},{"A?":"K","A":270.26842000000005,"B":516.1602092671942,"D":333.6795814656117,"C":269.32983,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Our organization has been serving the citizens of the world through pioneering and conducting innovative research that led to countless diagnostics, devices and therapies. \\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"text-align":{"B":"center"},"tracking":{"B":"56.0"},"color":{"B":"#323232"},"font-weight":{"B":"light"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"26.7017"}}},{"A?":"B","A":172},{"A?":"A","A":{"list-level":{"B":"0.0"},"head-indent":{"B":"0.0"},"style":{"B":"body"},"text-transform":{"B":"none"},"link":{"B":""},"decoration":{"B":"none"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"direction":{"B":"ltr"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[21,26,21,15,22,21,23,24]},"d":"C","l":false,"g":false,"h":"A"},{"A?":"K","A":270.26842,"B":946.0110341346765,"D":333.6795814656117,"C":269.32983,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Our organization aims to be committed and devoted to the local society and to play a crucial role in the improvement of the health of the nation and the entire world citizens.\\n"}],"B":[{"A?":"A","A":{"leading":{"B":"1300.0"},"text-align":{"B":"center"},"tracking":{"B":"56.0"},"color":{"B":"#323232"},"font-weight":{"B":"light"},"font-family":{"B":"YAFdJscCTpk,0"},"font-size":{"B":"26.7017"}}},{"A?":"B","A":175},{"A?":"A","A":{"list-level":{"B":"0.0"},"head-indent":{"B":"0.0"},"style":{"B":"body"},"text-transform":{"B":"none"},"link":{"B":""},"decoration":{"B":"none"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"direction":{"B":"ltr"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{},"font-weight":{}}}],"E":{}},"b":{"A":[25,17,21,22,20,19,25,27]},"d":"C","l":false,"g":false,"h":"A"},{"A?":"H","A":675.0468615815089,"B":1112.6929977632776,"D":225.15374842060478,"C":58.079334439415184,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":96.31505174711651,"y":{},"c":[{"A?":"K","A":7.105427357601002E-15,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-size":{"B":"74.6667"},"font-weight":{"B":"bold"},"font-family":{"B":"YAFdJl47p6A,0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"center"}}},{"A?":"B","A":6},{"A?":"A","A":{"tracking":{"B":"0.0"},"leading":{"B":"1400.0"},"spacing":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-size":{},"font-weight":{},"font-family":{},"text-transform":{},"text-align":{},"tracking":{},"leading":{},"spacing":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":25.494834713360746,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":83.81826825288351,"B":27.494834713360802,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"color":{"B":"#ffffff"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"tracking":{"B":"289.0"},"text-transform":{"B":"uppercase"},"text-align":{"B":"end"},"font-weight":{"B":"bold"}}},{"A?":"B","A":48},{"A?":"A","A":{"font-style":{"B":"normal"},"spacing":{"B":"0.0"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"color":{},"font-family":{},"font-size":{},"tracking":{},"text-transform":{},"text-align":{},"font-weight":{},"font-style":{},"spacing":{},"leading":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]},{"A?":"i","a":"PBTdGF9BN9tLVtyz","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"G":{"A":"EAGWVYqFw7c","B":2,"C":7},"D":{"C":"#323232","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"J","A":606.5875911853473,"B":288.8196194218693,"D":46.27611079503322,"C":46.27611079503322,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"b":[{"A":"M32 0A32 32 0 1 0 32 64A32 32 0 1 0 32 0Z","B":{"A":false,"C":"#fffbf5","D":0.0,"F":false,"J":false,"G":false,"H":false},"D":0.0}],"d":[],"c":{"A":{"A":0.0,"B":0.0,"D":64.0,"C":64.0},"B":64.0,"C":64.0,"D":"A","E":"A"},"e":{"A":false,"B":false},"f":[{"A":{"A":[{"A?":"A","A":"in\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"center"},"font-weight":{"B":"bold"},"leading":{"B":"1200.0"},"link":{"B":"https://www.linkedin.com/in/kwangwoo-kim-793471128/"},"font-size":{"B":"18.6667"},"decoration":{"B":"underline"},"font-family":{"B":"YAFdJl47p6A,0"},"color":{"B":"#2430a0"}}},{"A?":"B","A":2},{"A?":"A","A":{"tracking":{"B":"0.0"},"text-transform":{"B":"none"}}},{"A?":"B","A":1},{"A?":"A","A":{"leading":{},"font-size":{},"text-transform":{},"font-family":{},"link":{},"tracking":{},"text-align":{},"font-weight":{},"color":{},"decoration":{}}}],"E":{}},"B":{"A":[3]},"D":{"A":6.0,"B":6.0,"D":52.0,"C":52.0},"E":[4.0],"F":"B"}],"g":[],"h":{"A?":"H","A":46.27611079503322}},{"A?":"K","A":582.2955151975397,"B":881.623884802986,"D":407.57611519701436,"C":96.0,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"paragraph","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"102, Hoegi-ro, Dongdaemun-gu, Seoul, Republic of Korea\\n\\nkiqbns at gmail\\n"}],"B":[{"A?":"A","A":{"tracking":{"B":"56.0"},"head-indent":{"B":"0.0"},"link":{"B":""},"font-size":{"B":"20.0"},"direction":{"B":"ltr"},"font-family":{"B":"YAFdJi-0PQg,0"},"color":{"B":"#faefe0"},"spacing":{"B":"0.0"},"text-align":{"B":"end"},"leading":{"B":"1200.0"},"list-marker":{"B":"none"},"kerning":{"B":"0.0"},"text-transform":{"B":"none"},"decoration":{"B":"none"},"style":{"B":"body"},"list-level":{"B":"0.0"}}},{"A?":"B","A":55},{"A?":"A","A":{"text-align":{"B":"start"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{"B":"end"}}},{"A?":"B","A":16},{"A?":"A","A":{"tracking":{},"head-indent":{},"link":{},"font-size":{},"direction":{},"font-family":{},"color":{},"spacing":{},"text-align":{},"leading":{},"list-marker":{},"kerning":{},"text-transform":{},"decoration":{},"style":{},"list-level":{}}}],"E":{}},"b":{"A":[30,25,1,16]},"d":"A","l":false,"g":false,"h":"A"},{"A?":"U","A":690.2000000000002,"B":-18.432502067800215,"D":1402.8650041356002,"C":2.0,"E":-0.08168398064394691,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":2,"b":{"C":{"A":692.2000000000002,"B":-18.43178924047527}},"c":{"C":{"A":690.2000000000002,"B":1384.4317892404752}},"d":"#eee4db","e":[],"f":true,"g":[],"h":[]},{"A?":"U","A":567.2512931657276,"B":-18.432502067800215,"D":1402.8650041356002,"C":2.0,"E":-0.08168398064394691,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":2,"b":{"C":{"A":569.2512931657276,"B":-18.43178924047527}},"c":{"C":{"A":567.2512931657276,"B":1384.4317892404752}},"d":"#eee4db","e":[],"f":true,"g":[],"h":[]},{"A?":"K","A":608.0555171975396,"B":76.21718764324484,"D":196.28242431613677,"C":44.479996,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Get social\\n"}],"B":[{"A?":"A","A":{"font-family":{"B":"YAFdJi-0PQg,0"},"font-size":{"B":"37.3333"},"font-weight":{"B":"light"},"tracking":{"B":"-20.0"},"color":{"B":"#faefe0"},"leading":{"B":"1080.0"}}},{"A?":"B","A":11},{"A?":"A","A":{"font-family":{},"font-size":{},"font-weight":{},"tracking":{},"color":{},"leading":{}}}],"E":{}},"b":{"A":[]},"d":"A","l":false,"g":true,"h":"A"},{"A?":"H","A":160.0368468736522,"B":176.00609554585043,"D":1013.9878089082994,"C":287.2144473083204,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"b":373.3805688288146,"a":105.7609300325746,"y":{},"c":[{"A?":"K","A":-2.1316282072803006E-14,"B":0.0,"D":373.3805688288146,"C":89.06666,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"KIQBNS\\n"}],"B":[{"A?":"A","A":{"font-family":{"B":"YAFdJl47p6A,0"},"text-align":{"B":"center"},"color":{"B":"#fffbf5"},"text-transform":{"B":"uppercase"},"font-weight":{"B":"bold"},"font-size":{"B":"74.6667"}}},{"A?":"B","A":6},{"A?":"A","A":{"spacing":{"B":"0.0"},"leading":{"B":"1400.0"},"tracking":{"B":"0.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"text-align":{},"leading":{},"tracking":{},"spacing":{},"font-family":{},"font-size":{},"color":{},"text-transform":{},"font-weight":{}}}],"E":{}},"b":{"A":[7]},"d":"A","l":false,"h":"A"},{"A?":"K","A":68.86917346165848,"B":35.249587848865076,"D":286.88139313108445,"C":26.3949730766832,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"Korea Institute of\\nQuantum Brain and Neural Science\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"color":{"B":"#fffbf5"},"text-transform":{"B":"uppercase"},"tracking":{"B":"289.0"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"}}},{"A?":"B","A":51},{"A?":"A","A":{"leading":{"B":"1400.0"},"font-weight":{"B":"normal"},"spacing":{"B":"0.0"},"font-style":{"B":"normal"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[19,33]},"d":"A","e":321.71615451206856,"f":29.6,"l":false,"h":"A"},{"A?":"K","A":93.26414653834166,"B":25.494834713360603,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#fffbf5"},"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"}}},{"A?":"B","A":48},{"A?":"A","A":{"spacing":{"B":"0.0"},"font-style":{"B":"normal"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"},{"A?":"K","A":93.26414653834166,"B":27.494834713360603,"D":306.39089940209294,"C":12.496783494233005,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"N":"heading","P":[],"5":{},"T":{},"W":{},"a":{"A":[{"A?":"A","A":"||||||||||||||||||||||||||||||||||||||||||||||||\\n"}],"B":[{"A?":"A","A":{"text-align":{"B":"end"},"tracking":{"B":"289.0"},"color":{"B":"#fffbf5"},"font-weight":{"B":"bold"},"font-family":{"B":"YACgETiWKS8,0"},"font-size":{"B":"12.0"},"text-transform":{"B":"uppercase"}}},{"A?":"B","A":48},{"A?":"A","A":{"spacing":{"B":"0.0"},"font-style":{"B":"normal"},"leading":{"B":"1400.0"}}},{"A?":"B","A":1},{"A?":"A","A":{"tracking":{},"text-align":{},"font-weight":{},"color":{},"leading":{},"font-size":{},"text-transform":{},"font-family":{},"spacing":{},"font-style":{}}}],"E":{}},"b":{"A":[49]},"d":"A","e":333.4390992523321,"f":13.6,"l":false,"h":"A"}],"d":[]}],"I":[]}],"u":[],"L":{}}],"I":[]},"Z":{"A?":"E","M":"ko-KR","e":true,"f":{"A":"YACgETiWKS8-0","B":"#ffffff","C":"#304254"},"g":[{"A?":"A","K":"PB96TNBsrN9wzgCg","L":"/","e":{"A":true}}]},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"REGULAR","files":[{"url":"_assets/fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180},{"url":"_assets/fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188},{"url":"_assets/fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}},{"style":"BOLD_ITALICS","files":[{"url":"_assets/fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232},{"url":"_assets/fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028},{"url":"_assets/fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"BOLD","files":[{"url":"_assets/fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"_assets/fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064},{"url":"_assets/fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}},{"style":"ITALICS","files":[{"url":"_assets/fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632},{"url":"_assets/fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740},{"url":"_assets/fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}}],"E":false},{"A":"YAFdJl47p6A","B":0,"C":"210 네모진","D":[{"style":"BOLD","files":[{"url":"_assets/fonts/9d50ae33490ae5087a1f9868e2f778c6.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":1111880},{"url":"_assets/fonts/6f626074b99d7f0b4ae8a5bf32d0ec91.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":1465020},{"url":"_assets/fonts/bfcafe680fb80e35b37973b173baf1c2.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":2277524}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-589,"yMax":800},"hhea":{"ascender":800,"descender":-450,"lineGap":0},"os2":{"sTypoAscender":800,"sTypoDescender":-200,"sTypoLineGap":0,"usWinAscent":800,"usWinDescent":450,"fsSelection":32}}}],"E":false},{"A":"YACgETiWKS8","B":0,"C":"Glacial Indifference","D":[{"style":"REGULAR","files":[{"url":"_assets/fonts/0ceeda8eec0fa216f931b5732d1ba0b7.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":25832},{"url":"_assets/fonts/764f25de5868dbceef81542f2b05b43a.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":21748},{"url":"_assets/fonts/6c1b03a0d4768a7a2f13ac2be051b664.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":54752}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-251,"yMax":893},"hhea":{"ascender":950,"descender":-250,"lineGap":0},"os2":{"sTypoAscender":750,"sTypoDescender":-250,"sTypoLineGap":200,"usWinAscent":950,"usWinDescent":250,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"_assets/fonts/bea0fca4803d9241422ceb4aae395802.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":31020},{"url":"_assets/fonts/c1a7e50900c9101f8e7570c425586032.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":14048},{"url":"_assets/fonts/81ab6d08b4cf515eaf0f58f56a5e2422.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":16040}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-259,"yMax":959},"hhea":{"ascender":950,"descender":-250,"lineGap":0},"os2":{"sTypoAscender":750,"sTypoDescender":-250,"sTypoLineGap":200,"usWinAscent":950,"usWinDescent":250,"fsSelection":0}}}],"E":false},{"A":"YAFdJscCTpk","B":0,"C":"Nanum Square","D":[{"style":"LIGHT","files":[{"url":"_assets/fonts/943a74c806644d3efd972b80bb103695.otf","format":"OTF","unicodeRanges":[],"sizeBytes":750932},{"url":"_assets/fonts/0c9fc2cb2e139c7291aeb3b3b253b2f2.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":282092},{"url":"_assets/fonts/ffa59a7ca5582be45526429c2d78c1e8.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":234932}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-249,"yMax":843},"hhea":{"ascender":850,"descender":-255,"lineGap":30},"os2":{"sTypoAscender":850,"sTypoDescender":-255,"sTypoLineGap":30,"usWinAscent":850,"usWinDescent":255,"fsSelection":64}}},{"style":"BOLD","files":[{"url":"_assets/fonts/b6e3dd561159a7a9da3d814455dec0f0.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":228272},{"url":"_assets/fonts/e6fe78fd93b29e886d645a8a59bbc6f4.otf","format":"OTF","unicodeRanges":[],"sizeBytes":733500},{"url":"_assets/fonts/75c24e1ec351ac93999817c80fe351c4.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":280484}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-252,"yMax":847},"hhea":{"ascender":850,"descender":-255,"lineGap":30},"os2":{"sTypoAscender":850,"sTypoDescender":-255,"sTypoLineGap":30,"usWinAscent":850,"usWinDescent":255,"fsSelection":64}}}],"E":false},{"A":"YAFdJi-0PQg","B":0,"C":"Garet","D":[{"style":"LIGHT","files":[{"url":"_assets/fonts/ba7dab456450c7439ae6c6a5909f6cdb.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":56524},{"url":"_assets/fonts/7f46ce5d6d4841cf4dd806bf715d4ba3.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":48596},{"url":"_assets/fonts/1efc87aa07b68941c07c74b9ee195776.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":100640}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-324,"yMax":961},"hhea":{"ascender":1070,"descender":-380,"lineGap":0},"os2":{"sTypoAscender":1070,"sTypoDescender":-380,"sTypoLineGap":0,"usWinAscent":1070,"usWinDescent":380,"fsSelection":192}}},{"style":"REGULAR","files":[{"url":"_assets/fonts/d648f3ac5d9fdc35dfb1afcda2b8403d.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":100900},{"url":"_assets/fonts/0d6b73825ffb53723442c5660e87b4d4.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":48428},{"url":"_assets/fonts/8f620ff1528bc774884168ad49f7d54e.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":56356}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-328,"yMax":965},"hhea":{"ascender":1070,"descender":-380,"lineGap":0},"os2":{"sTypoAscender":1070,"sTypoDescender":-380,"sTypoLineGap":0,"usWinAscent":1070,"usWinDescent":380,"fsSelection":192}}}],"E":false},{"A":"YAFdJs2qTWQ","B":0,"C":"Open Sauce","D":[{"style":"REGULAR","files":[{"url":"_assets/fonts/88a36cab6d7cfa75bff7e49535b9642a.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":23052},{"url":"_assets/fonts/114c2932af378c09314d332d5b12da51.otf","format":"OTF_CFF","unicodeRanges":[],"sizeBytes":38988},{"url":"_assets/fonts/8991ca1e41c36f0b3c097a0571f64870.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":26052}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":1000,"yMin":-237,"yMax":1028},"hhea":{"ascender":1000,"descender":-237,"lineGap":0},"os2":{"sTypoAscender":763,"sTypoDescender":-237,"sTypoLineGap":0,"usWinAscent":1000,"usWinDescent":237,"fsSelection":64}}}],"E":false}],"E":[{"type":"RASTER","id":"MAGvro2x4TI","version":1,"files":[{"url":"./sources/main1.jpg","urlDenied":false,"width":800,"height":457,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvro2x4TI","version":1,"files":[{"url":"./sources/main2.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvro2x4TI","version":1,"files":[{"url":"./sources/main1.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrj6fF70","version":1,"files":[{"url":"./sources/main2.jpg","urlDenied":false,"width":800,"height":457,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrj6fF70","version":1,"files":[{"url":"./sources/main1.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrj6fF70","version":1,"files":[{"url":"./sources/main1.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrr3dBAY","version":1,"files":[{"url":"./sources/main2.jpg","urlDenied":false,"width":800,"height":457,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrr3dBAY","version":1,"files":[{"url":"./sources/main1.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvrr3dBAY","version":1,"files":[{"url":"./sources/main2.jpg","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/jpeg"}]},{"type":"RASTER","id":"MAGvriJyUBg","version":1,"files":[{"url":"_assets/media/fd475dda6371f188f591613abe148182.png","urlDenied":false,"width":800,"height":457,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN","mimeType":"image/png"}]},{"type":"RASTER","id":"MAGvriJyUBg","version":1,"files":[{"url":"_assets/media/afd9e59eea3b823684a9f71330f4af67.png","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_2X","mimeType":"image/png"}]},{"type":"RASTER","id":"MAGvriJyUBg","version":1,"files":[{"url":"_assets/media/afd9e59eea3b823684a9f71330f4af67.png","urlDenied":false,"width":1344,"height":768,"watermarked":false,"spritesheet":false,"recoloring":{},"quality":"SCREEN_3X","mimeType":"image/png"}]}],"F":[],"G":[],"H":[],"S":[],"K":{"A":"YACgETiWKS8-0","B":"#ffffff","C":"#304254"},"Q":{"A":false,"B":true,"M":true},"R":false,"T":true,"W":false,"U":false,"V":false},"ui":{"N":false,"A":true,"B":"A","C":false,"D":false,"K":"A","I":true,"J":false,"P":false}}'); window['flags'] = JSON.parse('{"61af18e7":true,"e75f1ec":true,"b449fd3a":true,"21296728":true,"7352b856":true,"978ce15d":150000.0,"bee5f7cb":true}'); window['cmsg'] = window['cmsg'] || { locale: "ko-KR", strings: {} };})();</script><script crossorigin="anonymous" src="./sources/44f34d65fd73e1ed.runtime.js" defer="" integrity="sha512-X9pbe1KLWNp2Cc2E+rXPrIyh9ypYg03DtN6V9lyoOIjeLc3KwHU1Qbk1spedVyyKQWRAVXQlYuuiJb/jTIb8GA==" nonce=""></script><script crossorigin="anonymous" src="./sources/3728e0a9c5b9c68f.s4le6a.vendor.js" defer="" integrity="sha512-Q0M8bNXf4EK25TsxODbPA7DtMzU/wFrdoWP7bVnfp9c03h9VLvkwZpcIKwzo1va1YjfjMMUvJ97M5y6Wlr6Rmw==" nonce=""></script><script crossorigin="anonymous" src="./sources/f90d92d25d1cd0e3.vendor.js" defer="" integrity="sha512-M6jk9jbryq7jIVzbpU8D6Xcjfy+cbuTjsd7w+y2vNHWyKDfRLv47TAc015AIC6WzKoZYT8d/jcFyAshhEE7RAg==" nonce=""></script><script crossorigin="anonymous" src="./sources/5ca1bccb21c99aad.strings.js" integrity="sha512-NSvOuvyVmauU0baWwrI+KkWn1SghlbIszMd77wpODUnMtJ33gXAShrC/hF8qsmXLhYZGJH3xWpPWEYMtQKAorw==" nonce=""></script><script crossorigin="anonymous" src="./sources/d37787e6e62d4cfd.ko-KR.js" integrity="sha512-A1XvpbPuLw0A7h/eNGkS450OgRXAbnDuLFKbUVBzRUxnsKIh7RPLTLVzT4RYZ0qCH9m9iYyqson43LZM8Amvfg==" nonce=""></script><script crossorigin="anonymous" src="./sources/9bbbab0b3b011006.js" defer="" integrity="sha512-5Qmb0qHhAj/ELT1Zr/iswLWaBDeKY6sYbS2JKmpeSwnacFYS6usM1Xx9oWMNY9fQG1YGjOk7o8LX6f9hno3jwA==" nonce=""></script><div class="Q_Mxww"><div class="AdBbhQ"></div></div><div class="i7CgFw"></div><div class="BghEng"><div></div><div></div></div><div class="sOABQQ"></div><div class="sOABQQ"></div><div class="glasp-extension-toaster" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div></body><whale-quicksearch translate="no" style="visibility: visible;"><template shadowrootmode="closed"><style></style><div class="anchor"></div><div class="quicksearch" data-version="2161329"></div></template></whale-quicksearch></html>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Our organization has been serving the citizens of the world through pioneering and conducting innovative research that led to countless diagnostics, devices and therapies. </span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p><br>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Our organization aims to be committed and devoted to the local society and to play a crucial role in the improvement of the health of the nation and the entire world citizens.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      <br><br></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>If you are interested, please don’t hesitate to contact us.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>102, Hoegi-ro, Dongdaemun-gu, Seoul, Republic of Korea</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <!--
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div>
+            </div>--><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>kiqbns at gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <h3 class="sitename"><img src="./assets/img/logo-b-s.png" width="90%" alt=""></h3>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/in/kwangwoo-kim-793471128/"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">KIQBNS</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distribuited by <a href="https://themewagon.com">ThemeWagon</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
