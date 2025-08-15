@@ -597,7 +597,6 @@ section,
 .about .content h1 {
   font-weight: 400;
   font-size: 40px;
-    align-items: middle;
 }
 
 .about .content h2 {
@@ -726,6 +725,7 @@ section,
   margin-top: -2px;
   border-left: 2px solid var(--accent-color);
   position: relative;
+  align-items: top center;
 }
 
 .resume .resume-item h4 {
