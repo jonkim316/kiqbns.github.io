@@ -661,8 +661,7 @@ section,
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: var(--heading-color);
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -674,7 +673,6 @@ section,
   margin-top: -2px;
   border-left: 2px solid var(--accent-color);
   position: relative;
-  align-items: top center;
 }
 
 .resume .resume-item h4 {
