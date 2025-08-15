@@ -661,7 +661,8 @@ section,
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-title {
-  color: var(--heading-color);
+  color: var(--default-color);
+  background-color: var(--background-color);
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
