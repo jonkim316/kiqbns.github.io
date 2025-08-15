@@ -597,6 +597,7 @@ section,
 .about .content h1 {
   font-weight: 400;
   font-size: 40px;
+    align-items: middle;
 }
 
 .about .content h2 {
